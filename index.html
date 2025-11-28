@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Joel y Javier</title>
+  <title>Joel Baena + Javier Amaya</title>
   <style>
     body {
       margin: 0;
@@ -12,24 +12,27 @@
       text-align: center;
     }
 
-    h1 {
-      color: white;
-      font-size: 3em;
-      margin-top: 60px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    }
-
     .heart {
       position: relative;
       width: 200px;
       height: 180px;
-      margin: 60px auto;
+      margin: 100px auto;
       background-color: red;
       transform: rotate(-45deg);
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    .heart::before,
+    .heart::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: red;
+      top: -100px;
+      left: 0;
+    }
+
     .heart::after {
       content: "";
       position: absolute;
@@ -37,14 +40,6 @@
       height: 200px;
       border-radius: 50%;
       background-color: red;
-    }
-
-    .heart::before {
-      top: -100px;
-      left: 0;
-    }
-
-    .heart::after {
       left: 100px;
       top: 0;
     }
@@ -63,7 +58,6 @@
   </style>
 </head>
 <body>
-  <h1>Joel</h1>
   <div class="heart">
     <div class="heart-text">Joel Baena +<br>Javier Amaya</div>
   </div>
