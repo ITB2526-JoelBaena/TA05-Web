@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f8cdda, #fbc2eb);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 4em;
+  margin-top: 40px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Corazón grande y centrado */
+.heart {
+  position: relative;
+  width: 300px;
+  height: 270px;
+  margin: 60px auto;
+  background-color: red;
+  transform: rotate(-45deg);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.heart::before {
+  top: -150px;
+  left: 0;
+}
+
+.heart::after {
+  left: 150px;
+  top: 0;
+}
+
+/* Texto dentro del corazón */
+.heart-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: white;
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 1.6;
+}
