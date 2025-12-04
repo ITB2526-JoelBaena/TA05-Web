@@ -3,71 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>TA05</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: pink;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-    }
-
-    h1 {
-      color: white;
-      font-size: 4em;
-      margin-top: 40px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .heart {
-      position: relative;
-      width: 300px;
-      height: 270px;
-      margin: 80px auto 40px;
-      background-color: red;
-      transform: rotate(-45deg);
-    }
-
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background-color: red;
-    }
-
-    .heart::before {
-      top: -150px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: 150px;
-      top: 0;
-    }
-
-    .heart-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      color: white;
-      font-size: 1.8em;
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>TA05</h1>
+  <h1 class="title">TA05</h1>
+
   <div class="heart">
     <div class="heart-text">
-      Joel Baena<br>
-      +<br>
-      Javier Amaya
+      <div>Joel Baena</div>
+      <div>+</div>
+      <div>Javier Amaya</div>
     </div>
   </div>
 </body>
