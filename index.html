@@ -1,141 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>TA05</title>
   <style>
-    :root {
-      --pink-bg: #f7b6d4;
-      --pink-bg-2: #f3a6cc;
-      --heart: #e50914;
-      --text: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(180deg, var(--pink-bg), var(--pink-bg-2));
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 0;
+      background: pink;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
     }
 
-    /* Título superior */
-    .title {
-      color: var(--text);
-      font-weight: 700;
-      font-size: clamp(32px, 6vw, 64px);
-      margin: 32px 16px 16px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-      letter-spacing: 0.02em;
+    h1 {
+      color: white;
+      font-size: 3em;
+      margin-top: 40px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
 
-    /* Contenedor para centrar el corazón */
-    .heart-wrap {
-      width: min(90vw, 700px);
-      margin: 12px auto 48px;
-      position: relative;
-      padding-top: 8px; /* un poco de aire respecto al título */
-    }
-
-    /* Corazón grande y simétrico hecho con CSS */
     .heart {
       position: relative;
-      width: 100%;
-      /* relación de aspecto y tamaño: que sea grande y no choque */
-      height: min(75vw, 600px);
-      max-height: 600px;
-      margin: 0 auto;
+      width: 150px;   /* más pequeño */
+      height: 135px;
+      margin: 40px auto;
+      background-color: red;
       transform: rotate(-45deg);
-      background: var(--heart);
-      border-radius: 32px 0 0 32px; /* suaviza el vértice inferior */
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
     }
+
     .heart::before,
     .heart::after {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 100%;
-      background: var(--heart);
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
+      background-color: red;
     }
-    /* lóbulo superior izquierdo */
+
     .heart::before {
-      top: -45%;
+      top: -75px;
       left: 0;
     }
-    /* lóbulo superior derecho */
+
     .heart::after {
-      left: 45%;
+      left: 75px;
       top: 0;
     }
 
-    /* Caja interna para el texto, rotada de vuelta y con safe area */
-    .heart-inner {
+    .heart-text {
       position: absolute;
-      inset: 0;
-      transform: rotate(45deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10% 12%; /* margen interno para que nada toque bordes */
-    }
-
-    /* Pila vertical de los 3 renglones */
-    .lines {
-      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      color: white;
+      font-size: 1em;
+      font-weight: bold;
       text-align: center;
-      color: var(--text);
-      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-      display: grid;
-      grid-template-rows: auto auto auto;
-      gap: clamp(8px, 2.5vw, 18px);
-    }
-
-    .name-top {
-      font-weight: 800;
-      font-size: clamp(22px, 5.5vw, 48px);
-      line-height: 1.15;
-      letter-spacing: 0.01em;
-    }
-    .plus {
-      font-weight: 900;
-      font-size: clamp(28px, 7vw, 64px);
-      line-height: 1;
-    }
-    .name-bottom {
-      font-weight: 800;
-      font-size: clamp(22px, 5.5vw, 48px);
-      line-height: 1.15;
-      letter-spacing: 0.01em;
-    }
-
-    /* Un poco de aire debajo en pantallas altas */
-    .spacer {
-      height: 6vh;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
-  <h1 class="title">TA05</h1>
-
-  <div class="heart-wrap">
-    <div class="heart">
-      <div class="heart-inner">
-        <div class="lines">
-          <div class="name-top">Joel Baena</div>
-          <div class="plus">+</div>
-          <div class="name-bottom">Javier Amaya</div>
-        </div>
-      </div>
+  <h1>TA05</h1>
+  <div class="heart">
+    <div class="heart-text">
+      Joel Baena<br>
+      +<br>
+      Javier Amaya
     </div>
   </div>
-
-  <div class="spacer" aria-hidden="true"></div>
 </body>
 </html>
