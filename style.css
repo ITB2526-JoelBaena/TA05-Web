@@ -28,7 +28,7 @@ body {
   content: "";
   position: absolute;
   width: 250px;   /* mismo tamaño */
-  height: 250px;  /* mismo tamaño */
+  height: 225px;  /* mismo tamaño */
   border-radius: 50%;
   background-color: red;
   z-index: 0; /* círculos detrás */
