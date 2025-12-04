@@ -14,16 +14,16 @@
 
     h1 {
       color: white;
-      font-size: 3em;
+      font-size: 4em;
       margin-top: 40px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
 
     .heart {
       position: relative;
-      width: 150px;   /* más pequeño */
-      height: 135px;
-      margin: 40px auto;
+      width: 300px;
+      height: 270px;
+      margin: 80px auto 40px;
       background-color: red;
       transform: rotate(-45deg);
     }
@@ -32,19 +32,19 @@
     .heart::after {
       content: "";
       position: absolute;
-      width: 150px;
-      height: 150px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       background-color: red;
     }
 
     .heart::before {
-      top: -75px;
+      top: -150px;
       left: 0;
     }
 
     .heart::after {
-      left: 75px;
+      left: 150px;
       top: 0;
     }
 
@@ -54,10 +54,10 @@
       left: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
       color: white;
-      font-size: 1em;
+      font-size: 1.8em;
       font-weight: bold;
       text-align: center;
-      line-height: 1.4;
+      line-height: 1.6;
     }
   </style>
 </head>
