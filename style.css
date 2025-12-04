@@ -1,61 +1,96 @@
+/* Fondo y tipografía */
 body {
   margin: 0;
   padding: 0;
-  background: pink; /* fondo plano */
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
+  background: pink;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Título arriba */
 .title {
   color: white;
-  font-size: 4em;
-  margin-top: 40px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 64px);
+  margin: 32px 16px 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Corazón centrado y más abajo */
+/* Layout: centra el corazón más abajo */
+.layout {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: flex-start;    /* empieza debajo del título */
+  justify-content: center;
+  padding-top: 80px;          /* baja el corazón */
+  padding-bottom: 80px;
+}
+
+/* Corazón grande y simétrico */
 .heart {
   position: relative;
-  width: 250px;
-  height: 225px;
-  margin: 120px auto; /* más abajo para que se vea el título */
-  background-color: red;
+  width: min(80vw, 600px);    /* tamaño grande y responsivo */
+  height: min(72vw, 540px);
+  background: #e50914;
   transform: rotate(-45deg);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
 }
 
+/* Lóbulos superiores: mismo tamaño y posiciones en espejo */
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 250px;   /* mismo tamaño */
-  height: 225px;  /* mismo tamaño */
+  width: 100%;
+  height: 100%;
+  background: #e50914;
   border-radius: 50%;
-  background-color: red;
-  z-index: 0; /* círculos detrás */
+  z-index: 0;
 }
 
-/* círculo izquierdo */
+/* Lóbulo izquierdo: sube la mitad de su alto */
 .heart::before {
-  top: -125px;
+  top: -50%;
   left: 0;
 }
 
-/* círculo derecho (efecto espejo) */
+/* Lóbulo derecho: desplaza a la derecha la mitad de su ancho */
 .heart::after {
   top: 0;
-  left: 115px;
+  left: 50%;
 }
 
-/* Texto dentro del corazón */
-.heart-text {
+/* Caja interna para texto, reorientada */
+.heart-inner {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  inset: 0;
+  transform: rotate(45deg);
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto auto auto;
+  gap: clamp(10px, 2vw, 20px);
+  padding: 12% 14%;           /* margen interno para no tocar bordes */
+  z-index: 1;                 /* por encima de los lóbulos */
+}
+
+/* Texto centrado y proporcionado */
+.line {
   color: white;
-  font-size: 1.6em;
-  font-weight: bold;
-  line-height: 1.6;
   text-align: center;
-  z-index: 1; /* texto por encima */
+  text-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+
+.name-top,
+.name-bottom {
+  font-weight: 800;
+  font-size: clamp(22px, 4.5vw, 44px);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.plus {
+  font-weight: 900;
+  font-size: clamp(28px, 6vw, 60px);
+  line-height: 1;
 }
