@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #f8cdda, #fbc2eb);
+  background: pink; /* fondo plano */
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }
@@ -13,12 +13,12 @@ body {
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Corazón grande y centrado */
+/* Corazón centrado y más abajo */
 .heart {
   position: relative;
-  width: 300px;
-  height: 270px;
-  margin: 60px auto;
+  width: 250px;
+  height: 225px;
+  margin: 120px auto; /* más abajo para que se vea el título */
   background-color: red;
   transform: rotate(-45deg);
 }
@@ -27,20 +27,23 @@ body {
 .heart::after {
   content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 250px;   /* mismo tamaño */
+  height: 250px;  /* mismo tamaño */
   border-radius: 50%;
   background-color: red;
+  z-index: 0; /* círculos detrás */
 }
 
+/* círculo izquierdo */
 .heart::before {
-  top: -150px;
+  top: -125px;
   left: 0;
 }
 
+/* círculo derecho (efecto espejo) */
 .heart::after {
-  left: 150px;
   top: 0;
+  left: 125px;
 }
 
 /* Texto dentro del corazón */
@@ -50,7 +53,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   color: white;
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: bold;
   line-height: 1.6;
+  text-align: center;
+  z-index: 1; /* texto por encima */
 }
