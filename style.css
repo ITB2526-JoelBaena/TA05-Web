@@ -1,90 +1,151 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ASIXc Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1 class="main-title">ASIXc</h1>
-    <h2 class="slider-title">Habilitats en Informàtica</h2>
-  </header>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f0;
+  color: #0d1b2a;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  <nav>
-    <ul class="tech-menu">
-      <li>Serveis de Xarxa</li>
-      <li>Sistemes Operatius</li>
-      <li>Bases de Dades</li>
-      <li>Ciberseguretat</li>
-    </ul>
-  </nav>
+header {
+  background-color: #0d1b2a;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
 
-  <main class="slider-container">
-    <div class="accordion-slider">
+.main-title {
+  font-size: 64px;
+  color: white;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
 
-      <!-- Slide 1 -->
-      <div class="slide" style="background-image:url('./images/xarxes.jpg')">
-        <div class="slide-content">
-          <div class="car-brand">Xarxes</div>
-          <div class="car-name">Serveis de Xarxa</div>
-          <div class="car-subtitle">Infraestructura i comunicació</div>
-          <div class="car-specs">
-            <div class="spec-row"><span class="spec-label">Coneixements:</span><span class="spec-value">TCP/IP, VLAN, DNS</span></div>
-            <div class="spec-row"><span class="spec-label">Pràctiques:</span><span class="spec-value">Configuració de routers i switches</span></div>
-          </div>
-        </div>
-      </div>
+.slider-title {
+  font-size: 28px;
+  color: #cfd8dc;
+  margin-top: 10px;
+}
 
-      <!-- Slide 2 -->
-      <div class="slide" style="background-image:url('./images/sistemes.jpg')">
-        <div class="slide-content">
-          <div class="car-brand">Sistemes</div>
-          <div class="car-name">Sistemes Operatius</div>
-          <div class="car-subtitle">Gestió i rendiment</div>
-          <div class="car-specs">
-            <div class="spec-row"><span class="spec-label">Coneixements:</span><span class="spec-value">Windows, Linux, BIOS</span></div>
-            <div class="spec-row"><span class="spec-label">Pràctiques:</span><span class="spec-value">Particions, drivers, virtualització</span></div>
-          </div>
-        </div>
-      </div>
+nav {
+  background-color: #263238;
+  width: 100%;
+}
 
-      <!-- Slide 3 -->
-      <div class="slide" style="background-image:url('./images/bd.jpg')">
-        <div class="slide-content">
-          <div class="car-brand">Dades</div>
-          <div class="car-name">Bases de Dades</div>
-          <div class="car-subtitle">Organització i consulta</div>
-          <div class="car-specs">
-            <div class="spec-row"><span class="spec-label">Coneixements:</span><span class="spec-value">SQL, MySQL, PostgreSQL</span></div>
-            <div class="spec-row"><span class="spec-label">Pràctiques:</span><span class="spec-value">Consultes, relacions, CRUD</span></div>
-          </div>
-        </div>
-      </div>
+.tech-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
 
-      <!-- Slide 4 -->
-      <div class="slide" style="background-image:url('./images/ciberseguretat.jpg')">
-        <div class="slide-content">
-          <div class="car-brand">Seguretat</div>
-          <div class="car-name">Ciberseguretat</div>
-          <div class="car-subtitle">Protecció digital</div>
-          <div class="car-specs">
-            <div class="spec-row"><span class="spec-label">Coneixements:</span><span class="spec-value">Firewall, encriptació, pentesting</span></div>
-            <div class="spec-row"><span class="spec-label">Pràctiques:</span><span class="spec-value">Auditories, simulació d'atacs</span></div>
-          </div>
-        </div>
-      </div>
+.tech-menu li {
+  margin: 0 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    </div>
-    <button class="navigation-arrows nav-prev">‹</button>
-    <button class="navigation-arrows nav-next">›</button>
-  </main>
+.slider-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  background: #eceff1;
+}
 
-  <footer>
-    <p>© 2025 Joel Baena - Portfolio ASIXc</p>
-  </footer>
+.slide {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1);
+  transition: all 0.8s ease;
+  position: relative;
+  cursor: pointer;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.slide:hover {
+  filter: grayscale(0.5);
+}
+
+.slide.active {
+  flex: 3;
+  filter: grayscale(0);
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  color: white;
+}
+
+.slide.active .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.car-brand {
+  font-size: 14px;
+  color: #b0bec5;
+  margin-bottom: 5px;
+}
+
+.car-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.car-subtitle {
+  font-size: 16px;
+  color: #eceff1;
+  margin-bottom: 20px;
+}
+
+.car-specs .spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.spec-label {
+  color: #cfd8dc;
+}
+
+.spec-value {
+  color: white;
+  font-weight: 600;
+}
+
+.navigation-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(13, 27, 42, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
