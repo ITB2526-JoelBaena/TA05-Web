@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASIXc – RAID in Linux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="logo">ASIXc</div>
+  <h1>Linux RAID Implementation</h1>
+  <p>High Availability Storage using mdadm</p>
+</header>
+
+<main class="project-list">
+
+  <!-- BLOQUE 1: Imagen izquierda / Texto derecha -->
+  <div class="project-row">
+    <img src="img/project1-img1.png" class="project-side-img">
+    <div class="project-side-text">
+      <h2>Project Overview</h2>
+      <p>
+        This project focuses on implementing RAID in Linux using <b>mdadm</b> to improve
+        storage redundancy and availability. The goal was to simulate a real-world scenario
+        where disk failures must not interrupt system operation.
+      </p>
+      <p>
+        RAID was configured using virtual disks, partitioned and assembled into a RAID 1
+        array capable of surviving disk failures and automatically rebuilding.
+      </p>
+    </div>
+  </div>
+
+  <!-- BLOQUE 2: Texto izquierda / Imagen derecha -->
+  <div class="project-row reverse">
+    <div class="project-side-text">
+      <h2>Steps Performed</h2>
+      <ul>
+        <li>Created virtual disks and partitions using <b>fdisk</b></li>
+        <li>Assembled RAID using <b>mdadm</b></li>
+        <li>Formatted and mounted the RAID array</li>
+        <li>Simulated disk failure and verified auto-recovery</li>
+        <li>Configured RAID persistence in <b>/etc/mdadm/mdadm.conf</b></li>
+      </ul>
+      <p>
+        Example RAID creation command:
+        <pre>mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1</pre>
+      </p>
+    </div>
+    <img src="img/project1-img2.png" class="project-side-img">
+  </div>
+
+  <!-- BLOQUE 3: Imagen izquierda / Texto derecha -->
+  <div class="project-row">
+    <img src="img/project1-img3.png" class="project-side-img">
+    <div class="project-side-text">
+      <h2>Final Result</h2>
+      <p>
+        The RAID system is fully functional, resilient to disk failures, and capable of
+        rebuilding automatically. This setup significantly improves data availability and
+        reliability in Linux environments.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer-menu">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+</footer>
+
+</body>
+</html>
