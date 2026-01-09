@@ -16,7 +16,7 @@
 
 <main class="project-list">
 
-  <!-- BLOQUE 1: Imagen izquierda / Texto derecha -->
+  <!-- BLOQUE 1 -->
   <div class="project-row">
     <img src="img/project2-img1.png" class="project-side-img">
     <div class="project-side-text">
@@ -26,34 +26,26 @@
         The network includes VLAN segmentation, inter-VLAN routing, DHCP, DNS, NAT and
         security through ACLs.
       </p>
-      <p>
-        The goal was to create a scalable and secure network infrastructure similar to
-        what a medium-sized company would use.
-      </p>
     </div>
   </div>
 
-  <!-- BLOQUE 2: Texto izquierda / Imagen derecha -->
+  <!-- BLOQUE 2 (invertido correctamente) -->
   <div class="project-row reverse">
+    <img src="img/project2-img2.png" class="project-side-img">
     <div class="project-side-text">
       <h2>Network Components</h2>
       <ul>
-        <li>VLANs for each department (Admin, HR, IT, Guests)</li>
+        <li>VLANs for each department</li>
         <li>Router-on-a-stick inter-VLAN routing</li>
         <li>Centralized DHCP server</li>
         <li>Internal DNS server</li>
         <li>NAT for internet access</li>
         <li>ACLs to restrict inter-department access</li>
       </ul>
-      <p>
-        Example ACL rule:
-        <pre>access-list 100 deny ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255</pre>
-      </p>
     </div>
-    <img src="img/project2-img2.png" class="project-side-img">
   </div>
 
-  <!-- BLOQUE 3: Imagen izquierda / Texto derecha -->
+  <!-- BLOQUE 3 -->
   <div class="project-row">
     <img src="img/project2-img3.png" class="project-side-img">
     <div class="project-side-text">
@@ -70,6 +62,7 @@
 <footer class="footer-menu">
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
 </footer>
 
 </body>

@@ -16,7 +16,7 @@
 
 <main class="project-list">
 
-  <!-- BLOQUE 1: Imagen izquierda / Texto derecha -->
+  <!-- BLOQUE 1 -->
   <div class="project-row">
     <img src="img/project1-img1.png" class="project-side-img">
     <div class="project-side-text">
@@ -26,15 +26,12 @@
         storage redundancy and availability. The goal was to simulate a real-world scenario
         where disk failures must not interrupt system operation.
       </p>
-      <p>
-        RAID was configured using virtual disks, partitioned and assembled into a RAID 1
-        array capable of surviving disk failures and automatically rebuilding.
-      </p>
     </div>
   </div>
 
-  <!-- BLOQUE 2: Texto izquierda / Imagen derecha -->
+  <!-- BLOQUE 2 (invertido correctamente) -->
   <div class="project-row reverse">
+    <img src="img/project1-img2.png" class="project-side-img">
     <div class="project-side-text">
       <h2>Steps Performed</h2>
       <ul>
@@ -44,23 +41,17 @@
         <li>Simulated disk failure and verified auto-recovery</li>
         <li>Configured RAID persistence in <b>/etc/mdadm/mdadm.conf</b></li>
       </ul>
-      <p>
-        Example RAID creation command:
-        <pre>mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1</pre>
-      </p>
     </div>
-    <img src="img/project1-img2.png" class="project-side-img">
   </div>
 
-  <!-- BLOQUE 3: Imagen izquierda / Texto derecha -->
+  <!-- BLOQUE 3 -->
   <div class="project-row">
     <img src="img/project1-img3.png" class="project-side-img">
     <div class="project-side-text">
       <h2>Final Result</h2>
       <p>
         The RAID system is fully functional, resilient to disk failures, and capable of
-        rebuilding automatically. This setup significantly improves data availability and
-        reliability in Linux environments.
+        rebuilding automatically. This setup significantly improves data availability.
       </p>
     </div>
   </div>
@@ -70,6 +61,7 @@
 <footer class="footer-menu">
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
 </footer>
 
 </body>

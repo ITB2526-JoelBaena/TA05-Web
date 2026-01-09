@@ -37,6 +37,11 @@ const allProjects = document.querySelectorAll(".project-box");
 const categoryTitles = {
   networks: document.querySelector(".networks-title"),
   systems: document.querySelector(".systems-title"),
+  cybersecurity: document.querySelector(".cybersecurity-title"),
+  databases: document.querySelector(".databases-title"),
+  devops: document.querySelector(".devops-title"),
+  cloud: document.querySelector(".cloud-title"),
+  web: document.querySelector(".web-title")
 };
 
 filterButtons.forEach(btn => {
@@ -62,6 +67,7 @@ filterButtons.forEach(btn => {
     });
 
     Object.keys(categoryTitles).forEach(cat => {
+      if (!categoryTitles[cat]) return;
       if (category === "all" || cat === category) {
         categoryTitles[cat].style.display = "block";
       } else {
