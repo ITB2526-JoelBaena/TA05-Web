@@ -221,6 +221,33 @@ body {
   text-shadow: 0 0 10px #00eaff;
 }
 
+/* FOOTER FIXED + STYLED */
+.footer-menu {
+  width: 100%;
+  background: #03172f;
+  border-top: 2px solid #00eaff;
+  box-shadow: 0 0 15px #00eaff55;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.footer-menu a {
+  margin: 0 20px;
+  color: #00eaff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.footer-menu a:hover {
+  color: #8fdfff;
+}
+
 /* RESPONSIVE */
 @media (max-width: 800px) {
   .project-row,
